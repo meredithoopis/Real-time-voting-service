@@ -122,7 +122,7 @@ if __name__ == "__main__":
                 conn.commit()
             except psycopg2.IntegrityError as e: 
                 conn.rollback()
-    for i in range(600): 
+    for i in range(1000): 
         voter_data = generate_voter_data()
         insert_voters(conn,cur,voter_data)
         producer.produce(
